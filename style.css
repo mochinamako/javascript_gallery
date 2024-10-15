@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+    /*元からついている余白を全て無くしてしまう*/
+  }
+  
+  body {
+    display: grid;
+    justify-content: center;
+    /*gridで中央揃え　gridをなくすと左揃えになる*/
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  h1 {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  .gallery {
+    max-width: 800px;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*上の1frの数＝サムネイル画像の横並びの数*/
+    padding-top: 10px;
+    gap: 10px;
+  }
+
+  ul li img {
+    transition: opacity .5s;
+  }
+  
+  ul li img:hover {
+    cursor: pointer;
+    /*pointerで、マウスの指の形を出せる*/
+    opacity: .7;
+  }
+
+  .gallery div {
+    position: relative;
+  }
+  
+  #caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #FFF;
+  }
+
+  /*レスポンシブ対応　幅が小さくなるとサムネイルが2個並びになる*/
+  @media screen and (max-width: 640px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
